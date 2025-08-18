@@ -16,6 +16,47 @@
     <title>Frontend Mentor | Conference ticket generator</title>
   </head>
   <body>
+    <header style="background-color: black">
+      <img src="images/logo-full.svg" alt="logo" />
+    </header>
+    <main>
+      <h1>Your Journey to Coding Conf <span>2025 Starts Here !</span></h1>
+      <p>secure your spot at next year's biggest coding conference.</p>
+      <div class="data-processing-section">
+        <p>upload Avatar</p>
+        <div draggable="true">
+          <img src="images/icon-upload.svg" alt="upload-image-icon" />
+          <label for="image">Drag and Drop or click to upload</label>
+          <input
+            type="file"
+            name=""
+            id="image"
+            accept="image/jpeg, image/png"
+          />
+          <img src="images/icon-info.svg" alt="" /> upload your phot(JPEG or PNG
+          size: 580KB).
+        </div>
+        <form action="">
+          <div class="input-group">
+            <label for="full-names">Full Names</label>
+            <input type="text" id="full-names" />
+          </div>
+          <div class="input-group">
+            <label for="email-address">Email Address</label>
+            <input
+              type="text"
+              id="email-address"
+              placeholder="example@gmail.com"
+            />
+          </div>
+          <div class="input-group">
+            <label for="github-names">GitHub Username</label>
+            <input type="text" id="github-names" placeholder="@yourusername" />
+          </div>
+          <button>generate my ticket</button>
+        </form>
+      </div>
+    </main>
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
