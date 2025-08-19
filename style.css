@@ -5,14 +5,17 @@
 }
 body {
   background-image: url(images/pattern-circle.svg),
-    url(images/pattern-lines.svg),
+    url(images/pattern-lines.svg), url(images/pattern-squiggly-line-top.svg),
     url(images/pattern-squiggly-line-bottom-desktop.svg),
-    url(images/pattern-squiggly-line-top.svg), url(images/pattern-circle.svg),
-    url(images/background-desktop.png);
+    url(images/pattern-circle.svg), url(images/background-desktop.png);
 
-  background-repeat: no-repeat, no-repeat;
-  background-position: top left, center, left bottom, right top, center,
-    right center;
-  /* background-size: 10%, cover; */
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat;
+  background-position: top -5% left 3%, center, right top 7%, bottom left -15%,
+    center right 20%, right center;
+  background-size: 8%, cover, 30%, 60%, 10%, cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
 }
