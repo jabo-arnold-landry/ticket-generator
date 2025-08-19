@@ -48,7 +48,6 @@ header img {
   & p {
     color: var(--Neutral-500);
     font-weight: var(--weight-500);
-    font-size: 20px;
   }
 }
 h1 {
