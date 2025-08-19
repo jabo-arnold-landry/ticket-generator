@@ -8,6 +8,7 @@
   --Neutral-0: hsl(0, 0%, 100%);
   --Neutral-300: hsl(252, 6%, 83%);
   --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700-light: hsla(245, 19%, 35%, 0.322);
   --Neutral-700: hsl(245, 19%, 35%);
   --Neutral-900: hsl(248, 70%, 10%);
   --Orange-500: hsl(7, 88%, 67%);
@@ -31,7 +32,44 @@ body {
     center right 20%, right center;
   background-size: 8%, cover, 30%, 60%, 10%, cover;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   min-height: 100vh;
+  font-family: var(--family);
+  color: white;
+  margin: 1rem auto;
+}
+.drag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2em;
+  border: 2px dashed var(--Neutral-500);
+  background-color: var(--Neutral-700-light);
+  border-radius: 1em;
+  max-width: fit-content;
+  padding: 0.5rem 6rem;
+  margin: 0.7em 0;
+  & label {
+    cursor: pointer;
+  }
+}
+.upload-avatar-info {
+  color: var(--Neutral-300);
+  text-transform: capitalize;
+}
+.upload-warning-info span {
+  color: var(--Neutral-500);
+}
+input[type="file"] {
+  opacity: 0;
+}
+p:empty {
+  display: none;
+}
+.drag:has(img) > img {
+  background-color: var(--Neutral-700);
+  width: fit-content;
+  border-radius: 0.5em;
+  padding: 0.8em 0.2.3em;
 }
