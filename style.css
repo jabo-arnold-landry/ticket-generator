@@ -39,6 +39,29 @@ body {
   color: white;
   margin: 1rem auto;
 }
+header img {
+  margin: 0.2em 7rem 2rem;
+  max-width: 30%;
+}
+.header-text {
+  margin: 0.4rem 2rem 3rem;
+  & p {
+    color: var(--Neutral-500);
+    font-weight: var(--weight-500);
+    font-size: 20px;
+  }
+}
+h1 {
+  font-weight: var(--weight-800);
+  font-size: 35px;
+  text-align: center;
+  max-width: 30pc;
+  line-height: 1.2em;
+}
+h1:has(+ p) {
+  margin: 0.9rem;
+}
+
 .drag {
   display: flex;
   flex-direction: column;
