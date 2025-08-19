@@ -72,6 +72,7 @@ h1:has(+ p) {
   max-width: fit-content;
   padding: 0.5rem 6rem;
   margin: 0.7em 0;
+  transition: all 0.3ms 0.1ms ease;
   & label {
     cursor: pointer;
   }
@@ -140,4 +141,9 @@ input:is(:focus, :focus-visible, :hover) {
 :is(input) {
   font: inherit;
   color: inherit;
+}
+.dragging {
+  background-color: var(--Neutral-900);
+  color: var(--Neutral-300);
+  border: none;
 }
