@@ -36,7 +36,6 @@ body {
   justify-content: center;
   min-height: 100vh;
   font-family: var(--family);
-  color: white;
   margin: 1rem auto;
 }
 header img {
@@ -56,6 +55,7 @@ h1 {
   text-align: center;
   max-width: 30pc;
   line-height: 1.2em;
+  color: var(--Neutral-0);
 }
 h1:has(+ p) {
   margin: 0.9rem;
@@ -94,4 +94,50 @@ p:empty {
   width: fit-content;
   border-radius: 0.5em;
   padding: 0.8em 0.2.3em;
+}
+
+form {
+  --radius: 0.5rem;
+  --wdth: 83%;
+  display: grid;
+  gap: 1.2rem;
+  margin: 0.5em;
+  max-width: 80%;
+}
+form label {
+  color: var(--Neutral-300);
+  padding-bottom: 0.3em;
+}
+.input-group {
+  display: grid;
+}
+form button {
+  width: var(--wdth);
+  padding: 0.7rem 0.6rem;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--Orange-700);
+  color: var(--Neutral-900);
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: var(--weight-700);
+  font-family: var(--family);
+}
+input {
+  width: var(--wdth);
+  padding: 0.5em 0.9rem;
+  outline: none;
+  background-color: var(--Neutral-700-light);
+  border: 1px solid var(--Neutral-700);
+  border-radius: var(--radius);
+}
+input::placeholder {
+  color: var(--Neutral-300);
+}
+input:is(:focus, :focus-visible, :hover) {
+  outline: 1px solid var(--Orange-500);
+}
+:is(input) {
+  font: inherit;
+  color: inherit;
 }
