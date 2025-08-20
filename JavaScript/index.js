@@ -28,6 +28,15 @@ const avatarElement = draggableElement.querySelector("img");
 const imageFileLabel = draggableElement.querySelector("label");
 const btn = draggableElement.querySelector("button");
 function displayImage(img) {
+  const allowedTypes = ["image/png", "image/jpeg"];
+  if (!allowedTypes.includes(img.type))
+    return alert("only jpeg and png files allowed");
+  const imageSize = img.size / 1024;
+  if (imageSize > 580) {
+    alert("the image KB is large");
+    return;
+  }
+
   const imgUrl = URL.createObjectURL(img);
   avatarElement.src = imgUrl;
   avatarElement.width = 100;
@@ -35,6 +44,7 @@ function displayImage(img) {
   imageFileLabel.textContent = "change Image";
   imageFileLabel.classList.add("active-label");
   btn.hidden = false;
+  return;
 }
 draggableElement.addEventListener("click", function (e) {
   if (e.target.matches("button")) {
