@@ -10,25 +10,39 @@ dragEvents.forEach((event) =>
   })
 );
 dragEvents.slice(0, 2).forEach((event) => {
-  draggableElement.addEventListener(event, activeState);
+  draggableElement.addEventListener(event, () => {
+    draggableElement.classList.add("dragging");
+  });
 });
 dragEvents.slice(2).forEach((event) => {
-  draggableElement.addEventListener(event, notActiveState);
+  draggableElement.addEventListener(event, () => {
+    draggableElement.classList.remove("dragging");
+  });
 });
-
 draggableElement.addEventListener("drop", function (e) {
   const dataTransfer = e.dataTransfer;
   const image = dataTransfer.files;
   displayImage(image[0]);
 });
-function activeState() {
-  draggableElement.classList.add("dragging");
-}
-function notActiveState() {
-  draggableElement.classList.remove("dragging");
-}
+const avatarElement = draggableElement.querySelector("img");
+const imageFileLabel = draggableElement.querySelector("label");
+const btn = draggableElement.querySelector("button");
 function displayImage(img) {
   const imgUrl = URL.createObjectURL(img);
-  const avatarElement = draggableElement.querySelector("img");
   avatarElement.src = imgUrl;
+  avatarElement.width = 100;
+  avatarElement.height = 70;
+  imageFileLabel.textContent = "change Image";
+  imageFileLabel.classList.add("active-label");
+  btn.hidden = false;
 }
+draggableElement.addEventListener("click", function (e) {
+  if (e.target.matches("button")) {
+    avatarElement.src = "images/icon-upload.svg";
+    avatarElement.width = 35;
+    avatarElement.height = 40;
+    imageFileLabel.textContent = "Drag and Drop or click to upload";
+    imageFileLabel.classList.remove("active-label");
+    btn.hidden = true;
+  }
+});
