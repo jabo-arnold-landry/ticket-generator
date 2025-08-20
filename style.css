@@ -132,6 +132,15 @@ form button {
   font-size: 16px;
   font-weight: var(--weight-700);
   font-family: var(--family);
+  cursor: pointer;
+  transition: all 0.2ms 0.3ms ease-in-out;
+}
+button:hover {
+  background-color: var(--Orange-500);
+  opacity: 0.9;
+}
+button:is(:focus, :focus-visible, ) {
+  box-shadow: 1px 1px 5px var(--Neutral-300);
 }
 input {
   width: var(--wdth);
@@ -145,8 +154,13 @@ input {
 input::placeholder {
   color: var(--Neutral-300);
 }
-input:is(:focus, :focus-visible, :hover) {
-  outline: 1px solid var(--Orange-500);
+input:is(:focus, :focus-visible) {
+  border: 2px solid var(--Neutral-500);
+}
+.drag:hover,
+input:hover {
+  background-color: var(--Neutral-700);
+  cursor: pointer;
 }
 form input {
   font: inherit;
@@ -155,10 +169,4 @@ form input {
   background-color: var(--Neutral-900);
   color: var(--Neutral-300);
   border: none;
-}
-.active-label {
-  background-color: var(--Neutral-700-light);
-  border: none;
-  padding: 0.3rem 0.6em;
-  border-radius: 0.2rem;
 }
