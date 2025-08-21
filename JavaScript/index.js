@@ -56,3 +56,32 @@ draggableElement.addEventListener("click", function (e) {
     btn.hidden = true;
   }
 });
+const form = document.querySelector("form");
+const nameInput = document.getElementById("full-names");
+const gitHubInput = document.getElementById("github-names");
+const emailInput = document.querySelector("#email-address");
+const outlineError = "1px solid var(--Orange-700)";
+function sanitizeInput() {
+  if (!nameInput.value) {
+    nameInput.style.outline = outlineError;
+    return alert("your name is required");
+  }
+  const emailRegex = /^[\w\d]+@\w{5}\.\w{2,3}$/gim;
+  if (!emailRegex.test(emailInput.value)) {
+    emailInput.style.outline = outlineError;
+    return alert("the email is invalid");
+  }
+  if (!gitHubInput.value) {
+    gitHubInput.style.outline = outlineError;
+    return alert("your github account as well!");
+  }
+}
+[nameInput, emailInput, emailInput].forEach((input) => {
+  input.addEventListener("input", function (e) {
+    e.target.style.outline = "none";
+  });
+});
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  sanitizeInput();
+});
