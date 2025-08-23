@@ -31,6 +31,8 @@ body {
   background-position: top -5% left 3%, center, right top 7%, bottom left -15%,
     center right 20%, right center;
   background-size: 8%, cover, 30%, 60%, 10%, cover;
+  background-attachment: fixed;
+  overflow: hidden;
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -169,4 +171,35 @@ form input {
   background-color: var(--Neutral-900);
   color: var(--Neutral-300);
   border: none;
+}
+.ticket-slot {
+  color: white;
+  display: grid;
+  gap: 2em;
+  padding: 0.5rem 0.9rem;
+  position: relative;
+  margin: auto 0.5rem;
+}
+.ticket {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  display: block;
+}
+.part {
+  display: flex;
+  gap: 1rem;
+}
+.part-1 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.github-section {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.part-1 img {
+  border-radius: 0.5rem;
 }
