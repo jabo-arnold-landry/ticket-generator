@@ -20,9 +20,9 @@
       <header>
         <img src="images/logo-full.svg" alt="logo" />
       </header>
-      <main>
+      <main class="fom-section">
         <div class="header-text">
-          <h1>Your Journey to Coding Conf <span>2025 Starts Here !</span></h1>
+          <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
           <p>secure your spot at next year's biggest coding conference.</p>
         </div>
         <div class="data-processing-section">
@@ -32,18 +32,18 @@
               src="images/icon-upload.svg"
               alt="upload-image-icon"
               width="35"
-              height="40"
+              height="30"
             />
-            <div class="imag-controllers">
-              <button hidden>remove image</button>
-              <label for="image">Drag and Drop or click to upload</label>
+            <div class="input-group">
+              <label for="image">Drag and Drop or click to upload</label><br />
+              <input
+                hidden
+                type="file"
+                name=""
+                id="image"
+                accept="image/jpeg, image/png"
+              />
             </div>
-            <input
-              type="file"
-              name=""
-              id="image"
-              accept="image/jpeg, image/png"
-            />
           </div>
           <div class="upload-warning-info">
             <img src="images/icon-info.svg" alt="" />
@@ -74,11 +74,49 @@
           </form>
         </div>
       </main>
-      <div class="attribution">
+      <article>
+        <main class="ticket-header">
+          <h1>
+            Congrats, <span class="names">Jonatan Kristof!</span> <br />Your
+            ticket is ready.
+          </h1>
+          <p class="email-update-text">
+            We've emailed your ticket to
+            <span class="email">jonatan@email.com</span> and will send updates
+            in the run up to the event.
+          </p>
+        </main>
+        <section class="ticket-slot">
+          <img
+            src="images/pattern-ticket.svg"
+            alt=""
+            class="ticket"
+            width="400"
+          />
+          <div class="part">
+            <img src="images/logo-mark.svg" alt="" />
+            <div class="content-info">
+              <h2>Coding Conf</h2>
+              <p class="time-location">Jan 31, 2025 / Austion, TX</p>
+            </div>
+          </div>
+          <div class="part-1">
+            <img src="images/image-avatar.jpg" alt="" width="50" />
+            <div class="content-info">
+              <strong>Jonatan Kristof</strong>
+              <div class="github-section">
+                <img src="images/icon-github.svg" alt="" />
+                <span>@Jonatan</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+      <!-- <div class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
         >. Coded by <a href="#">Your Name Here</a>.
-      </div>
+      </div> -->
     </section>
   </body>
 </html>

@@ -1,5 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+:root {
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700-light: hsla(245, 19%, 35%, 0.322);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+  --Gradient-text: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  --family: "Inconsolata", monospace;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-700: 700;
+  --weight-800: 800;
+}
+body {
+  background-image: url(images/pattern-circle.svg),
+    url(images/pattern-lines.svg), url(images/pattern-squiggly-line-top.svg),
+    url(images/pattern-squiggly-line-bottom-desktop.svg),
+    url(images/pattern-circle.svg), url(images/background-desktop.png);
+
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat;
+  background-position: top -5% left 3%, center, right top 7%, bottom left -15%,
+    center right 20%, right center;
+  background-size: 8%, cover, 30%, 60%, 10%, cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: var(--family);
+  margin: 1rem auto;
+}
+.fom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  display: flex;
+  justify-content: center;
+}
+header img {
+  max-width: 30%;
+}
+.header-text {
+  margin: 0.9rem auto;
+
+  & p {
+    color: var(--Neutral-500);
+    font-weight: var(--weight-500);
+    text-align: center;
+  }
+}
+h1 {
+  font-weight: var(--weight-800);
+  font-size: 35px;
+  text-align: center;
+  max-width: 30pc;
+  line-height: 1.2em;
+  color: var(--Neutral-0);
+}
+h1:has(+ p) {
+  margin: 0.9rem;
+}
+
+.drag {
+  --text-color: rgb(187, 176, 176);
+  display: grid;
+  justify-items: center;
+  gap: 1em;
+  border: 2px dashed var(--Neutral-500);
+  background-color: var(--Neutral-700-light);
+  border-radius: 0.8em;
+  max-width: fit-content;
+  padding: 0.4rem 2rem;
+  margin: 0.7em 0;
+  & label {
+    cursor: pointer;
+    color: var(--text-color);
+  }
+  & button {
+    background-color: var(--Neutral-700-light);
+    border: none;
+    color: var(--text-color);
+    padding: 0.3rem 0.6em;
+    border-radius: 0.2rem;
+    text-transform: capitalize;
+  }
+}
+.upload-avatar-info {
+  color: var(--Neutral-300);
+  text-transform: capitalize;
+}
+.upload-warning-info span {
+  color: var(--Neutral-500);
+}
+input[type="file"] {
+  opacity: 0;
+}
+p:empty {
+  display: none;
+}
+.drag:has(img) > img {
+  background-color: var(--Neutral-700);
+  width: fit-content;
+  border-radius: 0.5em;
+  padding: 0.8em 0.2.3em;
+}
+
+form {
+  --radius: 0.5rem;
+  --wdth: 100%;
+  display: grid;
+  gap: 1.2rem;
+  margin: 0.5em;
+  max-width: 100%;
+}
+form label {
+  color: var(--Neutral-300);
+  padding-bottom: 0.3em;
+}
+.input-group {
+  display: grid;
+}
+form button {
+  width: var(--wdth);
+  padding: 0.7rem 0.6rem;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--Orange-700);
+  color: var(--Neutral-900);
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: var(--weight-700);
+  font-family: var(--family);
+  cursor: pointer;
+  transition: all 0.2ms 0.3ms ease-in-out;
+}
+button:hover {
+  background-color: var(--Orange-500);
+  opacity: 0.9;
+}
+button:is(:focus, :focus-visible, ) {
+  box-shadow: 1px 1px 5px var(--Neutral-300);
+}
+input {
+  width: var(--wdth);
+  padding: 0.5em 0.9rem;
+  outline: none;
+  background-color: var(--Neutral-700-light);
+  color: var(--Neutral-300);
+  border: 1px solid var(--Neutral-700);
+  border-radius: var(--radius);
+}
+input::placeholder {
+  color: var(--Neutral-300);
+}
+input:is(:focus, :focus-visible) {
+  border: 2px solid var(--Neutral-500);
+}
+.drag:hover,
+input:hover {
+  background-color: var(--Neutral-700);
+  cursor: pointer;
+}
+form input {
+  font: inherit;
+}
+.dragging {
+  background-color: var(--Neutral-900);
+  color: var(--Neutral-300);
+  border: none;
+}
+.ticket-slot {
+  color: white;
+  display: grid;
+  gap: 2em;
+  padding: 0.5rem 0.9rem;
+  position: relative;
+  margin: auto 0.5rem;
+}
+article {
+  color: white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+}
+article .ticket-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-update-text {
+  max-width: 45ch;
+  text-align: center;
+}
+
+.names {
+  background: var(--Gradient-text);
+  background-clip: text;
+  color: transparent;
+}
+.email {
+  color: var(--Orange-700);
+  font-weight: var(--weight-700);
+}
+.ticket {
+  position: absolute;
+  object-fit: cover;
+  max-width: 100%;
+  display: block;
+}
+.part {
+  display: flex;
+  gap: 1rem;
+}
+.part-1 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.github-section {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.part-1 img {
+  border-radius: 0.5rem;
 }
