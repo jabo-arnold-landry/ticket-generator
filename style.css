@@ -32,13 +32,18 @@ body {
     center right 20%, right center;
   background-size: 8%, cover, 30%, 60%, 10%, cover;
   background-attachment: fixed;
-  overflow: hidden;
-  display: flex;
-  /* align-items: center; */
-  justify-content: center;
   min-height: 100vh;
   font-family: var(--family);
   margin: 1rem auto;
+}
+.fom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  display: flex;
+  justify-content: center;
 }
 header img {
   margin: 0.2em 7rem 2rem;
@@ -114,7 +119,7 @@ form {
   display: grid;
   gap: 1.2rem;
   margin: 0.5em;
-  max-width: 80%;
+  max-width: 100%;
 }
 form label {
   color: var(--Neutral-300);
@@ -179,6 +184,21 @@ form input {
   padding: 0.5rem 0.9rem;
   position: relative;
   margin: auto 0.5rem;
+}
+article {
+  color: white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+}
+article .ticket-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.email-update-text {
+  max-width: 45ch;
 }
 .ticket {
   position: absolute;
