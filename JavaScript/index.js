@@ -25,6 +25,7 @@ draggableElement.addEventListener("drop", function (e) {
   displayImage(image[0]);
 });
 const avatarElement = draggableElement.querySelector("img");
+let isUploaded = false;
 const imageFileLabel = draggableElement.querySelector("label");
 const btn = draggableElement.querySelector("button");
 function displayImage(img) {
@@ -43,6 +44,7 @@ function displayImage(img) {
   avatarElement.height = 70;
   imageFileLabel.textContent = "change Image";
   imageFileLabel.classList.add("active-label");
+  isUploaded = true;
   btn.hidden = false;
   return;
 }
@@ -54,6 +56,7 @@ draggableElement.addEventListener("click", function (e) {
     imageFileLabel.textContent = "Drag and Drop or click to upload";
     imageFileLabel.classList.remove("active-label");
     btn.hidden = true;
+    isUploaded = false;
   }
 });
 const form = document.querySelector("form");
@@ -61,7 +64,17 @@ const nameInput = document.getElementById("full-names");
 const gitHubInput = document.getElementById("github-names");
 const emailInput = document.querySelector("#email-address");
 const outlineError = "1px solid var(--Orange-700)";
-function sanitizeInput() {
+const formSection = document.querySelector(".fom-section");
+const ticketTemplete = document.querySelector(".ticket-template");
+const ticketProfile = document.querySelector(".ticket-profile");
+
+[nameInput, emailInput, emailInput].forEach((input) => {
+  input.addEventListener("input", function (e) {
+    e.target.style.outline = "none";
+  });
+});
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
   if (!nameInput.value) {
     nameInput.style.outline = outlineError;
     return alert("your name is required");
@@ -75,13 +88,23 @@ function sanitizeInput() {
     gitHubInput.style.outline = outlineError;
     return alert("your github account as well!");
   }
+  if (!isUploaded) {
+    draggableElement.style.border = "1px solid var(--Orange-700)";
+    return alert("image required");
+  }
+  ticketCreation();
+});
+
+function ticketCreation() {
+  formSection.style.display = "none";
+  ticketTemplete.style.display = "flex";
+  document.querySelector(".names").textContent = nameInput.value;
+  document.querySelector(".email").textContent = emailInput.value;
+  document.querySelector(".ticket-name").textContent = nameInput.value;
+  document.querySelector(
+    ".ticket-github"
+  ).textContent = `@ ${gitHubInput.value}`;
+  const randomNumber = Math.ceil(Math.random() * 2000);
+  document.querySelector(".ticket-code").textContent = `#${randomNumber}`;
+  ticketProfile.src = avatarElement.src;
 }
-[nameInput, emailInput, emailInput].forEach((input) => {
-  input.addEventListener("input", function (e) {
-    e.target.style.outline = "none";
-  });
-});
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  sanitizeInput();
-});
