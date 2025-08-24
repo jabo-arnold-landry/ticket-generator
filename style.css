@@ -13,7 +13,7 @@
   --Neutral-900: hsl(248, 70%, 10%);
   --Orange-500: hsl(7, 88%, 67%);
   --Orange-700: hsl(7, 71%, 60%);
-  --Gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+  --Gradient-text: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
   --family: "Inconsolata", monospace;
   --weight-400: 400;
   --weight-500: 500;
@@ -187,7 +187,7 @@ form input {
 }
 article {
   color: white;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 3em;
@@ -197,9 +197,20 @@ article .ticket-header {
   flex-direction: column;
   align-items: center;
 }
+
 .email-update-text {
   max-width: 45ch;
   text-align: center;
+}
+
+.names {
+  background: var(--Gradient-text);
+  background-clip: text;
+  color: transparent;
+}
+.email {
+  color: var(--Orange-700);
+  font-weight: var(--weight-700);
 }
 .ticket {
   position: absolute;
