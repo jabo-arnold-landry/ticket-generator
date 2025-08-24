@@ -35,7 +35,11 @@
               height="30"
             />
             <div class="input-group">
-              <label for="image">Drag and Drop or click to upload</label><br />
+              <div class="imag-controllers">
+                <button hidden>remove image</button>
+                <label for="image">Drag and Drop or click to upload</label
+                ><br />
+              </div>
               <input
                 hidden
                 type="file"
@@ -57,7 +61,7 @@
             <div class="input-group">
               <label for="email-address">Email Address</label>
               <input
-                type="text"
+                type="email"
                 id="email-address"
                 placeholder="example@gmail.com"
               />

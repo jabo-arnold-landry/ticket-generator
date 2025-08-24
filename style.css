@@ -80,8 +80,18 @@ h1:has(+ p) {
   max-width: fit-content;
   padding: 0.4rem 2rem;
   margin: 0.7em 0;
+  transition: all 0.3ms 0.1ms ease;
   & label {
     cursor: pointer;
+    color: var(--text-color);
+  }
+  & button {
+    background-color: var(--Neutral-700-light);
+    border: none;
+    color: var(--text-color);
+    padding: 0.3rem 0.6em;
+    border-radius: 0.2rem;
+    text-transform: capitalize;
     color: var(--text-color);
   }
   & button {
@@ -154,6 +164,7 @@ input {
   padding: 0.5em 0.9rem;
   outline: none;
   background-color: var(--Neutral-700-light);
+  color: var(--Neutral-300);
   color: var(--Neutral-300);
   border: 1px solid var(--Neutral-700);
   border-radius: var(--radius);
