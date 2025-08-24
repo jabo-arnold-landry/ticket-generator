@@ -115,7 +115,7 @@ p:empty {
 
 form {
   --radius: 0.5rem;
-  --wdth: 83%;
+  --wdth: 100%;
   display: grid;
   gap: 1.2rem;
   margin: 0.5em;
@@ -187,7 +187,7 @@ form input {
 }
 article {
   color: white;
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3em;
@@ -199,6 +199,7 @@ article .ticket-header {
 }
 .email-update-text {
   max-width: 45ch;
+  text-align: center;
 }
 .ticket {
   position: absolute;
