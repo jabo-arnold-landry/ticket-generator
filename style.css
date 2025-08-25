@@ -13,7 +13,11 @@
   --Neutral-900: hsl(248, 70%, 10%);
   --Orange-500: hsl(7, 88%, 67%);
   --Orange-700: hsl(7, 71%, 60%);
-  --Gradient-text: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+  --Gradient-text: linear-gradient(
+    to right,
+    hsl(7, 86%, 67%),
+    hsl(0, 0%, 100%)
+  );
   --family: "Inconsolata", monospace;
   --weight-400: 400;
   --weight-500: 500;
@@ -199,7 +203,7 @@ form input {
   margin: auto 0.5rem;
 }
 article {
-  color: white;
+  color: var(--Neutral-500);
   display: none;
   flex-direction: column;
   align-items: center;
@@ -250,5 +254,9 @@ article .ticket-header {
 }
 .ticket-code {
   transform-origin: 28px -8px;
+  color: var(--Neutral-500);
   transform: rotate(90deg);
+}
+.content-info p {
+  color: var(--Neutral-500);
 }

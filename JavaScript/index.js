@@ -99,7 +99,7 @@ form.addEventListener("submit", function (e) {
 function ticketCreation() {
   formSection.style.display = "none";
   ticketTemplete.style.display = "flex";
-  document.querySelector(".names").textContent = nameInput.value;
+  document.querySelector(".names").textContent = `${nameInput.value}!`;
   document.querySelector(".email").textContent = emailInput.value;
   document.querySelector(".ticket-name").textContent = nameInput.value;
   document.querySelector(
