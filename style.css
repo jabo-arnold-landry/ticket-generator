@@ -111,7 +111,9 @@ h1:has(+ p) {
   color: var(--Neutral-500);
 }
 input[type="file"] {
+  position: absolute;
   opacity: 0;
+  z-index: -100;
 }
 p:empty {
   display: none;
@@ -245,4 +247,8 @@ article .ticket-header {
 }
 .part-1 img {
   border-radius: 0.5rem;
+}
+.ticket-code {
+  transform-origin: 28px -8px;
+  transform: rotate(90deg);
 }
