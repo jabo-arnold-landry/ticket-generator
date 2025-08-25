@@ -1,7 +1,8 @@
 const dragEvents = ["dragenter", "dragover", "dragleave", "drop"];
 const draggableElement = document.querySelector(".drag");
 const fileInputElement = document.querySelector("[type=file]");
-fileInputElement.addEventListener("change", function (e) {
+let isUploaded = false;
+fileInputElement.addEventListener("input", function (e) {
   displayImage(fileInputElement.files[0]);
 });
 dragEvents.forEach((event) =>
@@ -25,7 +26,7 @@ draggableElement.addEventListener("drop", function (e) {
   displayImage(image[0]);
 });
 const avatarElement = draggableElement.querySelector("img");
-let isUploaded = false;
+
 const imageFileLabel = draggableElement.querySelector("label");
 const btn = draggableElement.querySelector("button");
 function displayImage(img) {
@@ -103,7 +104,7 @@ function ticketCreation() {
   document.querySelector(".ticket-name").textContent = nameInput.value;
   document.querySelector(
     ".ticket-github"
-  ).textContent = `@ ${gitHubInput.value}`;
+  ).textContent = `@${gitHubInput.value}`;
   const randomNumber = Math.ceil(Math.random() * 2000);
   document.querySelector(".ticket-code").textContent = `#${randomNumber}`;
   ticketProfile.src = avatarElement.src;
