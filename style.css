@@ -40,6 +40,25 @@ body {
   font-family: var(--family);
   margin: 1rem auto;
 }
+@media (width > 321px) and (width <= 600px) {
+  body {
+    background-image: url(images/pattern-circle.svg),
+      url(images/pattern-lines.svg), url(images/pattern-squiggly-line-top.svg),
+      url(images/pattern-squiggly-line-bottom-mobile-tablet.svg),
+      url(images/pattern-circle.svg), url(images/background-mobile.png);
+    background-position: top -4% left 5%, center, top 4% right, bottom left 0%,
+      center, right center;
+    background-size: 16%, cover, 40%, 70%, 20%, cover;
+  }
+}
+@media (min-width: 600px) and (max-width: 900px) {
+  body {
+    background-image: url(images/pattern-circle.svg),
+      url(images/pattern-lines.svg), url(images/pattern-squiggly-line-top.svg),
+      url(images/pattern-squiggly-line-bottom-mobile-tablet.svg),
+      url(images/pattern-circle.svg), url(images/background-tablet.png);
+  }
+}
 .fom-section {
   display: flex;
   flex-direction: column;
